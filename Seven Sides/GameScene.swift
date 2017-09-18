@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-//MARK: - Present position = video 2: 10.15
+//MARK: - Present position = video 2: 26.07
 
 class GameScene: SKScene {
     
@@ -37,9 +37,9 @@ class GameScene: SKScene {
     
     func prepColourWheel() {
         
-        for _ in 0...6{
+        for i in 0...6{
             
-            let side = SKSpriteNode(imageNamed: "side_Blue")
+            let side = Side(type: colourWheelOrder[i]) //class i created, indexing through colour type array
             let basePosition = CGPoint(x: self.size.width*0.5, y: self.size.height*0.25)//where do i want the side
             side.position = convert(basePosition, to: colourWheelBase)//convert this to the parent note co-ord system
             side.zRotation = -colourWheelBase.zRotation //whatever base is rotated by, take this off the side
