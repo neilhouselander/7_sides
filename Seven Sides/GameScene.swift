@@ -9,13 +9,55 @@
 import SpriteKit
 import GameplayKit
 
-//MARK: - Present position = video 1, 
+//MARK: - Present position = video 2: 10.15
 
 class GameScene: SKScene {
     
+    var colourWheelBase = SKShapeNode()
     
+    let spinColourWheel = SKAction.rotate(byAngle: -convertDegreesToRadians(degrees: 360/7), duration: 0.2) //declare here to avoid re-declaring everytime we touch screen in touchesBegan
     
-    
-    
-    
+    override func didMove(to view: SKView) {
+        
+        let background = SKSpriteNode(imageNamed: "gameBackground")
+        background.size = self.size
+        background.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        background.zPosition = -1
+        self.addChild(background)
+        
+        colourWheelBase = SKShapeNode(rectOf: CGSize(width: self.size.width*0.8, height: self.size.height*0.8))
+        colourWheelBase.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.5)
+        colourWheelBase.fillColor = SKColor.clear
+        colourWheelBase.strokeColor = SKColor.clear
+        self.addChild(colourWheelBase)
+        
+        prepColourWheel()
+        
     }
+    
+    func prepColourWheel() {
+        
+        for _ in 0...6{
+            
+            let side = SKSpriteNode(imageNamed: "side_Blue")
+            let basePosition = CGPoint(x: self.size.width*0.5, y: self.size.height*0.25)//where do i want the side
+            side.position = convert(basePosition, to: colourWheelBase)//convert this to the parent note co-ord system
+            side.zRotation = -colourWheelBase.zRotation //whatever base is rotated by, take this off the side
+            colourWheelBase.addChild(side)
+        
+            colourWheelBase.zRotation += convertDegreesToRadians(degrees: 360/7) //before next side is added rotate the base
+            
+        }
+    }
+
+    //MARK: - touches functions
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        colourWheelBase.run(spinColourWheel)
+        
+        
+    }
+    
+    
+}
