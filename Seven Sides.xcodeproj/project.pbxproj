@@ -13,6 +13,8 @@
 		C1560A0B1F6EA0DA00A58E2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1560A091F6EA0DA00A58E2C /* Main.storyboard */; };
 		C1560A0D1F6EA0DA00A58E2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1560A0C1F6EA0DA00A58E2C /* Assets.xcassets */; };
 		C1560A101F6EA0DA00A58E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1560A0E1F6EA0DA00A58E2C /* LaunchScreen.storyboard */; };
+		C1BF3F8D1F7166DC00471ADB /* BallObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF3F8C1F7166DC00471ADB /* BallObject.swift */; };
+		C1BF3F8F1F71710400471ADB /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1BF3F8E1F71710400471ADB /* CaviarDreams.ttf */; };
 		C1D437ED1F7025D400D435A7 /* UtilFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D437EC1F7025D400D435A7 /* UtilFuncs.swift */; };
 		C1D437EF1F70330C00D435A7 /* SideObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D437EE1F70330C00D435A7 /* SideObject.swift */; };
 		C1D437F11F7033F200D435A7 /* ModelsAndData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D437F01F7033F200D435A7 /* ModelsAndData.swift */; };
@@ -27,6 +29,8 @@
 		C1560A0C1F6EA0DA00A58E2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1560A0F1F6EA0DA00A58E2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1560A111F6EA0DA00A58E2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1BF3F8C1F7166DC00471ADB /* BallObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallObject.swift; sourceTree = "<group>"; };
+		C1BF3F8E1F71710400471ADB /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
 		C1D437EC1F7025D400D435A7 /* UtilFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilFuncs.swift; sourceTree = "<group>"; };
 		C1D437EE1F70330C00D435A7 /* SideObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideObject.swift; sourceTree = "<group>"; };
 		C1D437F01F7033F200D435A7 /* ModelsAndData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsAndData.swift; sourceTree = "<group>"; };
@@ -65,12 +69,14 @@
 				C15609FF1F6EA0DA00A58E2C /* AppDelegate.swift */,
 				C1560A091F6EA0DA00A58E2C /* Main.storyboard */,
 				C1560A0C1F6EA0DA00A58E2C /* Assets.xcassets */,
+				C1BF3F8E1F71710400471ADB /* CaviarDreams.ttf */,
 				C1560A0E1F6EA0DA00A58E2C /* LaunchScreen.storyboard */,
 				C1560A111F6EA0DA00A58E2C /* Info.plist */,
+				C1560A071F6EA0DA00A58E2C /* GameViewController.swift */,
 				C1D437EC1F7025D400D435A7 /* UtilFuncs.swift */,
 				C1D437F01F7033F200D435A7 /* ModelsAndData.swift */,
 				C1D437EE1F70330C00D435A7 /* SideObject.swift */,
-				C1560A071F6EA0DA00A58E2C /* GameViewController.swift */,
+				C1BF3F8C1F7166DC00471ADB /* BallObject.swift */,
 				C1560A051F6EA0DA00A58E2C /* GameScene.swift */,
 			);
 			path = "Seven Sides";
@@ -138,6 +144,7 @@
 			files = (
 				C1560A0B1F6EA0DA00A58E2C /* Main.storyboard in Resources */,
 				C1560A0D1F6EA0DA00A58E2C /* Assets.xcassets in Resources */,
+				C1BF3F8F1F71710400471ADB /* CaviarDreams.ttf in Resources */,
 				C1560A101F6EA0DA00A58E2C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1560A061F6EA0DA00A58E2C /* GameScene.swift in Sources */,
+				C1BF3F8D1F7166DC00471ADB /* BallObject.swift in Sources */,
 				C1560A081F6EA0DA00A58E2C /* GameViewController.swift in Sources */,
 				C1D437EF1F70330C00D435A7 /* SideObject.swift in Sources */,
 				C1560A001F6EA0DA00A58E2C /* AppDelegate.swift in Sources */,
