@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C11F72FE1F72F1ED000C999D /* correctSound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctSound1.wav; sourceTree = "<group>"; };
 		C15609FC1F6EA0DA00A58E2C /* Seven Sides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seven Sides.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15609FF1F6EA0DA00A58E2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1560A051F6EA0DA00A58E2C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 				C1560A091F6EA0DA00A58E2C /* Main.storyboard */,
 				C1560A0C1F6EA0DA00A58E2C /* Assets.xcassets */,
 				C1BF3F8E1F71710400471ADB /* CaviarDreams.ttf */,
+				C11F72FE1F72F1ED000C999D /* correctSound1.wav */,
 				C1560A0E1F6EA0DA00A58E2C /* LaunchScreen.storyboard */,
 				C1560A111F6EA0DA00A58E2C /* Info.plist */,
 				C1560A071F6EA0DA00A58E2C /* GameViewController.swift */,

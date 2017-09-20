@@ -9,9 +9,9 @@
 import SpriteKit
 import GameplayKit
 
-//MARK: - Present position = video 4: 0.00
+//MARK: - Present position = video 5: 14.36
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK:- Constants & Variables
     
@@ -23,11 +23,17 @@ class GameScene: SKScene {
     
     let tapToStartLabel = SKLabelNode(fontNamed: "Caviar Dreams")
     
+    let scoreLabel = SKLabelNode(fontNamed: "Caviar Dreams")
+    
+    let playCorrectSound = SKAction.playSoundFileNamed("correctSound1", waitForCompletion: false)
+    
     
     
     //MARK: - Functions
     
     override func didMove(to view: SKView) {
+        
+        self.physicsWorld.contactDelegate = self
         
         let background = SKSpriteNode(imageNamed: "gameBackground")
         background.size = self.size
@@ -46,6 +52,12 @@ class GameScene: SKScene {
         tapToStartLabel.fontColor = SKColor.darkGray
         tapToStartLabel.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.1)
         self.addChild(tapToStartLabel)
+        
+        scoreLabel.text = "0"
+        scoreLabel.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.85)
+        scoreLabel.fontColor = SKColor.darkGray
+        scoreLabel.fontSize = 225
+        self.addChild(scoreLabel)
         
         prepColourWheel()
         
@@ -97,6 +109,31 @@ class GameScene: SKScene {
         let deleteSequence = SKAction.sequence([scaleDown, deleteLabel])
         tapToStartLabel.run(deleteSequence)
         
+    }
+    
+    func checkMatch(ball:Ball, side:Side) {
+        
+        if ball.type == side.type {
+            //correct
+            print("Match")
+            correctMatch(ball: ball)
+            
+        }
+        else {
+            //incorrect
+            print("No match")
+        }
+    }
+    
+    func correctMatch(ball:Ball) {
+        
+        self.run(playCorrectSound) //not working?? xcode error??
+        ball.delete()
+        spawnBall()
+        
+        score += 1
+        scoreLabel.text = "\(score)"
+
         
     }
 
@@ -113,6 +150,35 @@ class GameScene: SKScene {
         else if currentGameState == .inGame {
             
             colourWheelBase.run(spinColourWheel)
+            
+        }
+    }
+    
+    //MARK:- Contact
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        //set up 2 constants to hold physics contacts
+        let ball: Ball
+        let side: Side
+        
+        //check which is contact bodyA & which is contact.bodyB---> and assign to the constant just made
+        if contact.bodyA.categoryBitMask == PhysicsCategories.Ball {
+            
+            ball = contact.bodyA.node! as! Ball
+            side = contact.bodyB.node! as! Side
+            
+        }
+        else {
+            
+            ball = contact.bodyB.node! as! Ball
+            side = contact.bodyA.node! as! Side
+        }
+        
+        if ball.isActive {                      //property of every ball, to avoid duplicate contacts
+            
+            checkMatch(ball: ball, side: side)
+
             
         }
     }

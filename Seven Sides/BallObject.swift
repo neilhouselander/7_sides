@@ -12,6 +12,7 @@ import SpriteKit
 class Ball: SKSpriteNode {
     
     let type: colourType
+    var isActive:Bool = true
     
     init() {
         
@@ -22,6 +23,14 @@ class Ball: SKSpriteNode {
         
         super.init(texture: ballTexture, color: SKColor.clear, size: ballTexture.size())
         
+        //physics
+        self.physicsBody = SKPhysicsBody(circleOfRadius: 55)
+        self.physicsBody!.affectedByGravity = false
+        self.physicsBody?.categoryBitMask = PhysicsCategories.Ball
+        self.physicsBody?.collisionBitMask = PhysicsCategories.None
+        self.physicsBody?.contactTestBitMask = PhysicsCategories.Side
+        
+        
         //scale in
         self.setScale(0)
         
@@ -30,25 +39,31 @@ class Ball: SKSpriteNode {
         //move to random side
         let randomSideIndex = Int(arc4random()%7)
         
-        let sideToMoveTo = sidePositions[randomSideIndex] //array created in gamescene when colour wheel created
+        let sideToMoveTo = sidePositions[randomSideIndex]                   //array created in gamescene when colour wheel created
         
         let moveToSideAction = SKAction.move(to: sideToMoveTo, duration: 2)
         
         let ballSpawnSequence = SKAction.sequence([scaleInAction, moveToSideAction])
         
         self.run(ballSpawnSequence)
-        
-        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //Ball Methods
     
-    
-    
-    
-    
-    
+    func delete() {
+        
+        self.isActive = false                                   //make sure only active balls can be deleted - avoid duplicate contacts on scale out
+        
+        self.removeAllActions()
+        let scaleDown = SKAction.scale(to: 0, duration: 0.2)
+        let deleteBall = SKAction.removeFromParent()
+        let deleteSequence = SKAction.sequence([scaleDown, deleteBall])
+        self.run(deleteSequence)
+        
+    }
 }

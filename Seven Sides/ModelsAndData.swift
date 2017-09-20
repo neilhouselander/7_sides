@@ -42,3 +42,15 @@ enum gameState {
     case inGame
 }
 
+//////////////////////Physics Categories//////////////////////
+struct PhysicsCategories {
+    
+    static let None:UInt32 = 0
+    static let Ball:UInt32 = 0b1
+    static let Side:UInt32 = 0b10
+    
+}
+
+///////////////////////////Score System/////////////////////////////
+
+var score: Int = 0
