@@ -41,7 +41,7 @@ class Ball: SKSpriteNode {
         
         let sideToMoveTo = sidePositions[randomSideIndex]                   //array created in gamescene when colour wheel created
         
-        let moveToSideAction = SKAction.move(to: sideToMoveTo, duration: 2)
+        let moveToSideAction = SKAction.move(to: sideToMoveTo, duration: ballMovementSpeed)
         
         let ballSpawnSequence = SKAction.sequence([scaleInAction, moveToSideAction])
         

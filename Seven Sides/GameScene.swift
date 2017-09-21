@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-//MARK: - Present position = video 5: 14.36
+//MARK: - Present position = video 5: 29.51
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -25,9 +25,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let scoreLabel = SKLabelNode(fontNamed: "Caviar Dreams")
     
-    let playCorrectSound = SKAction.playSoundFileNamed("correctSound1", waitForCompletion: false)
+    let playCorrectSound = SKAction.playSoundFileNamed("correctSound1.wav", waitForCompletion: false)
     
+    var highScore = UserDefaults.standard.integer(forKey: "highScoreSaved")
     
+    let highScoreLabel = SKLabelNode(fontNamed: "Caviar Dreams")
     
     //MARK: - Functions
     
@@ -58,6 +60,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.fontColor = SKColor.darkGray
         scoreLabel.fontSize = 225
         self.addChild(scoreLabel)
+        
+        highScoreLabel.text = "Best: \(highScore)"
+        highScoreLabel.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.80)
+        highScoreLabel.fontColor = SKColor.darkGray
+        highScoreLabel.fontSize = 100
+        self.addChild(highScoreLabel)
         
         prepColourWheel()
         
@@ -118,22 +126,50 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("Match")
             correctMatch(ball: ball)
             
+            
+            
         }
         else {
             //incorrect
             print("No match")
+            wrongMatch()
         }
     }
     
     func correctMatch(ball:Ball) {
         
-        self.run(playCorrectSound) //not working?? xcode error??
+        self.run(playCorrectSound) 
         ball.delete()
         spawnBall()
         
         score += 1
         scoreLabel.text = "\(score)"
+        
+        switch score {
+        case 5:  ballMovementSpeed = 1.8
+        case 15: ballMovementSpeed = 1.6
+        case 25: ballMovementSpeed = 1.4
+        case 40: ballMovementSpeed = 1.2
+        case 60: ballMovementSpeed = 1.0
+        default:
+            print("error with ball movement speed")
+        }
+        
+        if score > highScore {
+            highScoreLabel.text = "Best: \(score)"
+        }
 
+        
+    }
+    
+    func wrongMatch() {
+        
+        if score > highScore {
+            highScore = score
+            UserDefaults.standard.set(highScore, forKey: "highScoreSaved")
+        }
+        
+        
         
     }
 

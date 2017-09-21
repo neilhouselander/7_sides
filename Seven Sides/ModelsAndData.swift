@@ -34,6 +34,8 @@ let colourWheelOrder:[colourType] = [
 
 var sidePositions:[CGPoint] = []
 
+
+
 //////////////////////////Game State///////////////////////////
 
 enum gameState {
@@ -54,3 +56,8 @@ struct PhysicsCategories {
 ///////////////////////////Score System/////////////////////////////
 
 var score: Int = 0
+
+
+//////////////////////Level System//////////////////////
+
+var ballMovementSpeed:TimeInterval = 2
