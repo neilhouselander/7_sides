@@ -69,6 +69,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         prepColourWheel()
         
+        let spinAction = SKAction.rotate(byAngle: -convertDegreesToRadians(degrees: 360), duration: 10)
+        colourWheelBase.run(spinAction)
         
     }
     
@@ -98,6 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
     func spawnBall() {
         
         let ball = Ball()
@@ -107,6 +110,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func startGame() {
+        
+        let setForStart = SKAction.rotate(toAngle: 0, duration: 0.1)
+        
+        colourWheelBase.removeAllActions()
+        colourWheelBase.run(setForStart)
         
         spawnBall()
         
@@ -138,9 +146,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func correctMatch(ball:Ball) {
         
-        self.run(playCorrectSound) 
+        self.run(playCorrectSound)
+        
         ball.delete()
-        spawnBall()
         
         score += 1
         scoreLabel.text = "\(score)"
@@ -159,7 +167,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             highScoreLabel.text = "Best: \(score)"
         }
 
-        
+        spawnBall()
     }
     
     func wrongMatch() {
@@ -168,8 +176,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             highScore = score
             UserDefaults.standard.set(highScore, forKey: "highScoreSaved")
         }
-        
-        
         
     }
 
