@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C11FCFD71F740C2A006FF96C /* correctSound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C11F72FE1F72F1ED000C999D /* correctSound1.wav */; };
+		C14FDBA91F7831F5001DB406 /* wrongSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C14FDBA81F78318D001DB406 /* wrongSound.wav */; };
 		C1560A001F6EA0DA00A58E2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15609FF1F6EA0DA00A58E2C /* AppDelegate.swift */; };
 		C1560A061F6EA0DA00A58E2C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1560A051F6EA0DA00A58E2C /* GameScene.swift */; };
 		C1560A081F6EA0DA00A58E2C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1560A071F6EA0DA00A58E2C /* GameViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		C11F72FE1F72F1ED000C999D /* correctSound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctSound1.wav; sourceTree = "<group>"; };
+		C14FDBA81F78318D001DB406 /* wrongSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrongSound.wav; sourceTree = "<group>"; };
 		C15609FC1F6EA0DA00A58E2C /* Seven Sides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seven Sides.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15609FF1F6EA0DA00A58E2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1560A051F6EA0DA00A58E2C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				C1560A0C1F6EA0DA00A58E2C /* Assets.xcassets */,
 				C1BF3F8E1F71710400471ADB /* CaviarDreams.ttf */,
 				C11F72FE1F72F1ED000C999D /* correctSound1.wav */,
+				C14FDBA81F78318D001DB406 /* wrongSound.wav */,
 				C1560A0E1F6EA0DA00A58E2C /* LaunchScreen.storyboard */,
 				C1560A111F6EA0DA00A58E2C /* Info.plist */,
 				C1560A071F6EA0DA00A58E2C /* GameViewController.swift */,
@@ -150,6 +153,7 @@
 				C11FCFD71F740C2A006FF96C /* correctSound1.wav in Resources */,
 				C1560A0D1F6EA0DA00A58E2C /* Assets.xcassets in Resources */,
 				C1BF3F8F1F71710400471ADB /* CaviarDreams.ttf in Resources */,
+				C14FDBA91F7831F5001DB406 /* wrongSound.wav in Resources */,
 				C1560A101F6EA0DA00A58E2C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

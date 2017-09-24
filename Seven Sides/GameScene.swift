@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-//MARK: - Present position = video 6: 0.00
+//MARK: - Present position = video 6: 10.07
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -27,6 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let scoreLabel = SKLabelNode(fontNamed: "Caviar Dreams")
     
     let playCorrectSound = SKAction.playSoundFileNamed("correctSound1.wav", waitForCompletion: false)
+    let playIncorrectSound = SKAction.playSoundFileNamed("wrongSound.wav", waitForCompletion: false)
     
     var highScore = UserDefaults.standard.integer(forKey: "highScoreSaved")
     
@@ -71,7 +72,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         prepColourWheel()
         
         let spinAction = SKAction.rotate(byAngle: -convertDegreesToRadians(degrees: 360), duration: 10)
-        colourWheelBase.run(spinAction)
+        let keepSpinning = SKAction.repeatForever(spinAction)
+        colourWheelBase.run(keepSpinning)
         
     }
     
@@ -141,7 +143,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else {
             //incorrect
             print("No match")
-            wrongMatch()
+            wrongMatch(ball:ball)
         }
     }
     
@@ -171,12 +173,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         spawnBall()
     }
     
-    func wrongMatch() {
+    func wrongMatch(ball:Ball) {
         
         if score > highScore {
             highScore = score
             UserDefaults.standard.set(highScore, forKey: "highScoreSaved")
         }
+        
+        ball.flash()
+        ball.run(playIncorrectSound)
+        
         
     }
 
