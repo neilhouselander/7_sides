@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-//MARK: - Present position = video 6: 10.07
+//MARK: - Present position = video 7
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -36,6 +36,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: - Functions
     
     override func didMove(to view: SKView) {
+        
+        score = 0
+        ballMovementSpeed = 2
         
         self.physicsWorld.contactDelegate = self
         
@@ -137,8 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("Match")
             correctMatch(ball: ball)
             
-            
-            
+
         }
         else {
             //incorrect
@@ -182,8 +184,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         ball.flash()
         ball.run(playIncorrectSound)
+        currentGameState = .afterGame
         
+        colourWheelBase.removeAllActions()
         
+        let waitAction = SKAction.wait(forDuration: 3)
+        let changeScene = SKAction.run {
+            
+            //do this way as its an sks scene we are moving to
+            let sceneToMoveTo = SKScene(fileNamed: "GameOverScene")!
+            sceneToMoveTo.scaleMode = self.scaleMode
+            let sceneTransition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+            self.view!.presentScene(sceneToMoveTo, transition: sceneTransition)
+        }
+        
+        let sceneChangeSequence = SKAction.sequence([waitAction, changeScene])
+        self.run(sceneChangeSequence)
     }
 
     //MARK: - Touches Functions
