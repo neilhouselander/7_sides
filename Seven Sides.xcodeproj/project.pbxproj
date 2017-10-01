@@ -17,9 +17,9 @@
 		C1560A101F6EA0DA00A58E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1560A0E1F6EA0DA00A58E2C /* LaunchScreen.storyboard */; };
 		C1A0F1D21F810E640076181E /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A0F1D11F810E640076181E /* MainMenuScene.swift */; };
 		C1A0F1D41F810E9F0076181E /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1A0F1D31F810E9F0076181E /* MainMenu.sks */; };
-		C1A0F1D61F814F660076181E /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A0F1D51F814F660076181E /* HighScore.swift */; };
 		C1A270731F78F35300201649 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1A270721F78F35300201649 /* GameOverScene.sks */; };
 		C1A270751F78F38200201649 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A270741F78F38200201649 /* GameOverScene.swift */; };
+		C1AC4E401F81627F005AECC2 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC4E3F1F81627F005AECC2 /* HighScoreViewController.swift */; };
 		C1BF3F8D1F7166DC00471ADB /* BallObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BF3F8C1F7166DC00471ADB /* BallObject.swift */; };
 		C1BF3F8F1F71710400471ADB /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1BF3F8E1F71710400471ADB /* CaviarDreams.ttf */; };
 		C1D437ED1F7025D400D435A7 /* UtilFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D437EC1F7025D400D435A7 /* UtilFuncs.swift */; };
@@ -40,9 +40,9 @@
 		C1560A111F6EA0DA00A58E2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1A0F1D11F810E640076181E /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		C1A0F1D31F810E9F0076181E /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
-		C1A0F1D51F814F660076181E /* HighScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
 		C1A270721F78F35300201649 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		C1A270741F78F38200201649 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		C1AC4E3F1F81627F005AECC2 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		C1BF3F8C1F7166DC00471ADB /* BallObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallObject.swift; sourceTree = "<group>"; };
 		C1BF3F8E1F71710400471ADB /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
 		C1D437EC1F7025D400D435A7 /* UtilFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilFuncs.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				C1560A051F6EA0DA00A58E2C /* GameScene.swift */,
 				C1A270741F78F38200201649 /* GameOverScene.swift */,
 				C1A270721F78F35300201649 /* GameOverScene.sks */,
-				C1A0F1D51F814F660076181E /* HighScore.swift */,
+				C1AC4E3F1F81627F005AECC2 /* HighScoreViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -210,12 +210,12 @@
 				C1BF3F8D1F7166DC00471ADB /* BallObject.swift in Sources */,
 				C1A270751F78F38200201649 /* GameOverScene.swift in Sources */,
 				C1A0F1D21F810E640076181E /* MainMenuScene.swift in Sources */,
-				C1A0F1D61F814F660076181E /* HighScore.swift in Sources */,
 				C1560A081F6EA0DA00A58E2C /* GameViewController.swift in Sources */,
 				C1D437EF1F70330C00D435A7 /* SideObject.swift in Sources */,
 				C1560A001F6EA0DA00A58E2C /* AppDelegate.swift in Sources */,
 				C1D437ED1F7025D400D435A7 /* UtilFuncs.swift in Sources */,
 				C1D437F11F7033F200D435A7 /* ModelsAndData.swift in Sources */,
+				C1AC4E401F81627F005AECC2 /* HighScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

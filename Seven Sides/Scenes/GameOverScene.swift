@@ -26,7 +26,7 @@ class GameOverScene: SKScene {
         //do it this way as scene moving to is not an SKS scene
         let sceneToMoveTo = GameScene(size:self.size)
         sceneToMoveTo.scaleMode = self.scaleMode
-        let sceneTransition = SKTransition.fade(withDuration: 0.5)
+        let sceneTransition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
         self.view!.presentScene(sceneToMoveTo, transition: sceneTransition)
         
     }
