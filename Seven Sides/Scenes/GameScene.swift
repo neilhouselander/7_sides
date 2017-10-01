@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-//MARK: - Present position = video 7, don't forget to remove fps & node count when done
+//MARK: - Present position = video 7, 29.16
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
