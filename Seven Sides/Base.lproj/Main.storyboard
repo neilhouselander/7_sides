@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ngc-DR-C62">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,11 +30,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="974" y="626"/>
         </scene>
-        <!--High Score-->
+        <!--High Score View Controller-->
         <scene sceneID="s7Y-VO-fKb">
             <objects>
-                <viewController id="ngc-DR-C62" customClass="HighScore" sceneMemberID="viewController">
+                <viewController id="ngc-DR-C62" customClass="HighScoreViewController" customModule="Seven_Sides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AUS-so-R9F"/>
                         <viewControllerLayoutGuide type="bottom" id="LfF-sd-6dU"/>
@@ -173,7 +174,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTH-ha-MuB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTH-ha-MuB">
                                 <rect key="frame" x="275" y="328" width="73" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="24"/>
@@ -212,24 +213,24 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="fifthName" destination="xTH-ha-MuB" id="B4t-4h-yAr"/>
-                        <outlet property="fifthScore" destination="X31-R8-4Ld" id="Mcn-QK-mRN"/>
-                        <outlet property="firstName" destination="53e-hu-Pg6" id="YQ9-Vj-GLz"/>
-                        <outlet property="firstScore" destination="eHN-N2-VKb" id="mQu-4V-aDQ"/>
-                        <outlet property="fourthName" destination="igt-S0-Jsl" id="F6j-dc-XHU"/>
-                        <outlet property="fourthScore" destination="UdQ-MV-por" id="BNe-st-l6r"/>
-                        <outlet property="namePicker" destination="srf-Br-x7U" id="zmO-od-Var"/>
-                        <outlet property="scondScore" destination="e8a-a5-cTW" id="mhE-s4-DNz"/>
-                        <outlet property="secondName" destination="1Ly-FW-6FG" id="244-Lp-MJO"/>
-                        <outlet property="sixthName" destination="yrS-qe-Kxr" id="N8m-2I-ASu"/>
-                        <outlet property="sixthScore" destination="LHZ-LC-9nV" id="3OF-Lt-sk0"/>
-                        <outlet property="thirdName" destination="Nkf-id-oRe" id="Ko6-vX-3ZO"/>
-                        <outlet property="thirdScore" destination="c4B-Vq-2uQ" id="THx-No-p9o"/>
+                        <outlet property="fifthNameLabel" destination="xTH-ha-MuB" id="fSq-BB-1sc"/>
+                        <outlet property="fifthScoreLabel" destination="X31-R8-4Ld" id="pYG-vT-1ga"/>
+                        <outlet property="firstNameLabel" destination="53e-hu-Pg6" id="XGv-Sd-hJh"/>
+                        <outlet property="firstScoreLabel" destination="eHN-N2-VKb" id="OUz-uk-fAg"/>
+                        <outlet property="fourthNameLabel" destination="igt-S0-Jsl" id="y2M-0t-TLG"/>
+                        <outlet property="fourthScoreLabel" destination="UdQ-MV-por" id="Y5c-RA-hXy"/>
+                        <outlet property="initialPicker" destination="srf-Br-x7U" id="C3G-vz-8Sn"/>
+                        <outlet property="secondNameLabel" destination="1Ly-FW-6FG" id="vNH-bT-hAO"/>
+                        <outlet property="secondScoreLabel" destination="e8a-a5-cTW" id="RTt-ZB-9No"/>
+                        <outlet property="sixthNameLabel" destination="yrS-qe-Kxr" id="ulZ-GI-K9h"/>
+                        <outlet property="sixthScoreLabel" destination="LHZ-LC-9nV" id="VOM-R5-q0F"/>
+                        <outlet property="thirdNameLabel" destination="Nkf-id-oRe" id="D9A-gj-M76"/>
+                        <outlet property="thirdScoreLabel" destination="c4B-Vq-2uQ" id="UsF-jr-za3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cw4-BD-fxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757.60000000000002" y="118.29085457271366"/>
+            <point key="canvasLocation" x="906" y="71"/>
         </scene>
     </scenes>
 </document>
