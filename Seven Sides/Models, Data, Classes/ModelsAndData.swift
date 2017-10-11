@@ -60,7 +60,15 @@ var score: Int = 0
 
 ///////////////////////////High Score System///////////////////////
 
-var highScore:[String:Int] = [:]
+struct Players {
+    
+    var initials:String = ""
+    var score:Int = 0
+}
+
+
+
+
 
 var initialsArray = ["A", "B", "C", "D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
