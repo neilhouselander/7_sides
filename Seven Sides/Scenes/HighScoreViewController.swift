@@ -27,8 +27,12 @@ import UIKit
 //how to sort an array
 // players.sort(by: {$0.score > $1.score})
 
+//how to remove last in array:
+//myArray.removeLast()
+
 class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    //MARK: outlets
     
     @IBOutlet weak var initialsOutputTextField: UITextField!
     
@@ -48,17 +52,21 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var initialPicker: UIPickerView!
     
+    //MARK: constants & variable declations
+    
     var initialsForThisHighScore:String?
     
     var hiScoreArray:[Players] = []
     
+    let pickerFont = UIFont(name: "Caviar Dreams", size: 25)
     
+    //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         initialPicker.delegate = self
         initialPicker.dataSource = self
 
-        //dummy array
+        
         createDummyArray()
         updateLabelsWithNewArrayValues()
     }
@@ -87,6 +95,7 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
     }
     
+    //dummy array so it has value & no NIL entries will set this all to spaces & 0's before final implementation
     func createDummyArray() {
         
         let player1 = Players(initials: "AA1", score: 1)
@@ -120,14 +129,8 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         sixthNameLabel.text = hiScoreArray[5].initials
     }
     
-
     
-    
-
-    
-    //Picker View Functions
-    
-    let pickerFont = UIFont(name: "Caviar Dreams", size: 25)
+    //MARK: Picker View Functions
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return 50
@@ -160,17 +163,15 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
         if initialsForThisHighScore == nil {
             
-        initialsForThisHighScore = initialsArray[row]
-        initialsOutputTextField.text = initialsForThisHighScore
-        }
-        else {
-            if initialsForThisHighScore?.count != 3 {
-                
-            initialsForThisHighScore?.append(initialsArray[row])
+            initialsForThisHighScore = initialsArray[row]
             initialsOutputTextField.text = initialsForThisHighScore
-            }
+        }
+            else {
+                if initialsForThisHighScore?.count != 3 {
+                
+                    initialsForThisHighScore?.append(initialsArray[row])
+                    initialsOutputTextField.text = initialsForThisHighScore
+                }
         }
    }
-    
-    
 }
