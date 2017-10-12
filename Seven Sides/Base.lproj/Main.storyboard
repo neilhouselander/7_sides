@@ -241,7 +241,7 @@
                     </view>
                     <connections>
                         <outlet property="addInitialsLabel" destination="jYU-9M-wkO" id="o4j-Bh-sCe"/>
-                        <outlet property="enterVuttonOutlet" destination="YJ8-zy-C9m" id="jrm-05-YW8"/>
+                        <outlet property="enterButtonOutlet" destination="YJ8-zy-C9m" id="jrm-05-YW8"/>
                         <outlet property="fifthNameLabel" destination="xTH-ha-MuB" id="fSq-BB-1sc"/>
                         <outlet property="fifthScoreLabel" destination="X31-R8-4Ld" id="pYG-vT-1ga"/>
                         <outlet property="firstNameLabel" destination="53e-hu-Pg6" id="XGv-Sd-hJh"/>

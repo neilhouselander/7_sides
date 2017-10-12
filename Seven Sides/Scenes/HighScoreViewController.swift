@@ -30,7 +30,7 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     //MARK: outlets
     
     @IBOutlet weak var initialsOutputTextField: UITextField!
-    @IBOutlet weak var enterVuttonOutlet: UIButton!
+    @IBOutlet weak var enterButtonOutlet: UIButton!
     @IBOutlet weak var addInitialsLabel: UILabel!
     
     @IBOutlet weak var firstScoreLabel: UILabel!
@@ -119,13 +119,13 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         if initialPicker.alpha == 1 {
             initialPicker.alpha = 0
             initialsOutputTextField.alpha = 0
-            enterVuttonOutlet.alpha = 0
+            enterButtonOutlet.alpha = 0
             addInitialsLabel.alpha = 0
 
         } else {
             initialPicker.alpha = 1
             initialsOutputTextField.alpha = 1
-            enterVuttonOutlet.alpha = 1
+            enterButtonOutlet.alpha = 1
             addInitialsLabel.alpha = 1
         }
     }
