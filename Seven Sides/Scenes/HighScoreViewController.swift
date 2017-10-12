@@ -9,32 +9,29 @@
 import UIKit
 
 //MARK: To do
-//load up current names & scores from High Scores Array: DONE
-//enter your initials: DONE
-//add this & score to a new instance of ""Players"
-//append this to the hiScoreArray
-//sort the array
-//drop off the last-- only if more than 6 in the array
-//update labels
+//DONE load up current names & scores from High Scores Array: DONE
+//DONE enter your initials: DONE
+//DONE add this & score to a new instance of ""Players" DONE
+//DONE append this to the hiScoreArray DONE
+//DONE sort the array DONE
+//DONE drop off the last-- only if more than 6 in the array DONE
+//DONE update labels DONE
 //need to be abe to dismiss this view when finished looking at scores
+//need a return to start once intials entered
 
 //EXTRAS
-//dismiss picker view
-//hide the input stuff
-//add way of seeing hi scores without having to enter anything
-//once sorte this - need to use user defaults to store so persistant?? how to do that !
+//add way of seeing hi scores without having to enter anything -- or if your score - not better than lowest hi score then just show scores & flip input off (alpha 0)
+//once sorted this - need to use user defaults to store so persistant?? how to do that !
+//tidy up picker view entry - currently any wheel adds /appends - need each picker wheel to just do that initial/character
 
-//how to sort an array
-// players.sort(by: {$0.score > $1.score})
-
-//how to remove last in array:
-//myArray.removeLast()
 
 class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     //MARK: outlets
     
     @IBOutlet weak var initialsOutputTextField: UITextField!
+    @IBOutlet weak var enterVuttonOutlet: UIButton!
+    @IBOutlet weak var addInitialsLabel: UILabel!
     
     @IBOutlet weak var firstScoreLabel: UILabel!
     @IBOutlet weak var secondScoreLabel: UILabel!
@@ -55,8 +52,6 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     //MARK: constants & variable declations
     
     var initialsForThisHighScore:String?
-    
-    var hiScoreArray:[Players] = []
     
     let pickerFont = UIFont(name: "Caviar Dreams", size: 25)
     
@@ -85,14 +80,54 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     
     @IBAction func enterButtonPressed(_ sender: UIButton) {
+        
         //add to array
-        //sort array
-        //drop of last (if more than 6)
-        //update all labels
-        //dismiss pickerview
-        //hide input bits & enter label
         
+        if let initialsToAdd = initialsForThisHighScore {
+            
+            let scoreToAdd = 100
+            
+            let thisPlayer = Players(initials: initialsToAdd, score: scoreToAdd)
+            
+            hiScoreArray.append(thisPlayer)
+           
+            
+            //sort array
+            hiScoreArray.sort(by: {$0.score > $1.score})
+            
+            
+            //drop of last (if more than 6)
+            if hiScoreArray.count > 6 {
+                
+                hiScoreArray.removeLast()
+                
+            }
+            
+            //update all labels
+            updateLabelsWithNewArrayValues()
+            
+            //hide input
+            flipLabelsOnOff()
+
+            
+        }
+
+    }
+    
+    func flipLabelsOnOff(){
         
+        if initialPicker.alpha == 1 {
+            initialPicker.alpha = 0
+            initialsOutputTextField.alpha = 0
+            enterVuttonOutlet.alpha = 0
+            addInitialsLabel.alpha = 0
+
+        } else {
+            initialPicker.alpha = 1
+            initialsOutputTextField.alpha = 1
+            enterVuttonOutlet.alpha = 1
+            addInitialsLabel.alpha = 1
+        }
     }
     
     //dummy array so it has value & no NIL entries will set this all to spaces & 0's before final implementation

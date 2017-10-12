@@ -240,6 +240,8 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="addInitialsLabel" destination="jYU-9M-wkO" id="o4j-Bh-sCe"/>
+                        <outlet property="enterVuttonOutlet" destination="YJ8-zy-C9m" id="jrm-05-YW8"/>
                         <outlet property="fifthNameLabel" destination="xTH-ha-MuB" id="fSq-BB-1sc"/>
                         <outlet property="fifthScoreLabel" destination="X31-R8-4Ld" id="pYG-vT-1ga"/>
                         <outlet property="firstNameLabel" destination="53e-hu-Pg6" id="XGv-Sd-hJh"/>
@@ -258,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cw4-BD-fxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16.800000000000001" y="-113.79310344827587"/>
+            <point key="canvasLocation" x="-401" y="-60"/>
         </scene>
     </scenes>
 </document>
