@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="626"/>
+            <point key="canvasLocation" x="-382" y="636"/>
         </scene>
         <!--High Score View Controller-->
         <scene sceneID="s7Y-VO-fKb">
@@ -228,6 +228,17 @@
                                     <action selector="enterButtonPressed:" destination="ngc-DR-C62" eventType="touchUpInside" id="ZXg-Rt-v1Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-TE-Hnn">
+                                <rect key="frame" x="16" y="472" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="33"/>
+                                <state key="normal" title="Tap To Play Again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapToPlayAgainButton:" destination="ngc-DR-C62" eventType="touchUpInside" id="v04-5e-Msf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
@@ -254,13 +265,14 @@
                         <outlet property="secondScoreLabel" destination="e8a-a5-cTW" id="RTt-ZB-9No"/>
                         <outlet property="sixthNameLabel" destination="yrS-qe-Kxr" id="ulZ-GI-K9h"/>
                         <outlet property="sixthScoreLabel" destination="LHZ-LC-9nV" id="VOM-R5-q0F"/>
+                        <outlet property="tapToPlayAgainOutlet" destination="Jf6-TE-Hnn" id="gOI-S5-dCq"/>
                         <outlet property="thirdNameLabel" destination="Nkf-id-oRe" id="D9A-gj-M76"/>
                         <outlet property="thirdScoreLabel" destination="c4B-Vq-2uQ" id="UsF-jr-za3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cw4-BD-fxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="-60"/>
+            <point key="canvasLocation" x="-402.39999999999998" y="-60.719640179910051"/>
         </scene>
     </scenes>
 </document>

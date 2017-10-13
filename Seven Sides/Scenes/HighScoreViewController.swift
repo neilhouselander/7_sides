@@ -32,6 +32,7 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var initialsOutputTextField: UITextField!
     @IBOutlet weak var enterButtonOutlet: UIButton!
     @IBOutlet weak var addInitialsLabel: UILabel!
+    @IBOutlet weak var tapToPlayAgainOutlet: UIButton!
     
     @IBOutlet weak var firstScoreLabel: UILabel!
     @IBOutlet weak var secondScoreLabel: UILabel!
@@ -63,7 +64,7 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
         
         createDummyArray()
-        updateLabelsWithNewArrayValues()
+        updateLabelsWithArrayValues()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -104,15 +105,28 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             }
             
             //update all labels
-            updateLabelsWithNewArrayValues()
+            updateLabelsWithArrayValues()
             
             //hide input
             flipLabelsOnOff()
+            
+            //add tap to play again button
+            tapToPlayAgainOutlet.alpha = 1
+            
 
             
         }
 
     }
+    
+    @IBAction func tapToPlayAgainButton(_ sender: UIButton) {
+        
+        let sceneToMoveTo = GameScene()
+        
+        
+        
+    }
+    
     
     func flipLabelsOnOff(){
         
@@ -143,7 +157,7 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         hiScoreArray = [player1, player2, player3, player4, player5, player6]
     }
     
-    func updateLabelsWithNewArrayValues() {
+    func updateLabelsWithArrayValues() {
         
         firstScoreLabel.text = String(hiScoreArray[0].score)
         firstNameLabel.text = hiScoreArray[0].initials
