@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SpriteKit
+import GameplayKit
 
 //MARK: To do
 //DONE load up current names & scores from High Scores Array: DONE
@@ -58,12 +60,25 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     //MARK: Functions
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         initialPicker.delegate = self
         initialPicker.dataSource = self
-
         
-        createDummyArray()
+        if hiScoreArray.count == 0 {
+            
+            createDummyArray()
+        }
+//        else {
+//
+//            if let data = defaults.data(forKey: "hiScoreSaved") {
+//                let obj = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Players]
+//                hiScoreArray = obj!
+//            }
+//
+//        }
+        
         updateLabelsWithArrayValues()
     }
     
@@ -92,10 +107,8 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
             hiScoreArray.append(thisPlayer)
            
-            
             //sort array
             hiScoreArray.sort(by: {$0.score > $1.score})
-            
             
             //drop of last (if more than 6)
             if hiScoreArray.count > 6 {
@@ -103,6 +116,10 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 hiScoreArray.removeLast()
                 
             }
+            
+            //now set hiscore array back to defaults so can be read next time - DOES NOT WORK - MORE COMPLEX, NEED TO CHANGE STRUCT TO A CLASS THAT CONFORMS TO NSCODING
+//            let encodedData = NSKeyedArchiver.archivedData(withRootObject: hiScoreArray)
+//            defaults.set(encodedData, forKey: "hiScoreSaved")
             
             //update all labels
             updateLabelsWithArrayValues()
@@ -119,12 +136,23 @@ class HighScoreViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     }
     
+    
+    
     @IBAction func tapToPlayAgainButton(_ sender: UIButton) {
         
-        let sceneToMoveTo = GameScene()
+        
+      
+        if let view = self.view as! SKView? {
+
+            let scene = MainMenu(fileNamed: "MainMenu")!
+            scene.scaleMode = .aspectFill
+
+            view.presentScene(scene)
+
+            view.ignoresSiblingOrder = true
         
         
-        
+        }
     }
     
     

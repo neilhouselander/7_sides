@@ -66,7 +66,12 @@ struct Players {
     var score:Int = 0
 }
 
+
 var hiScoreArray:[Players] = []
+
+let defaults = UserDefaults.standard
+
+
 
 
 var initialsArray = ["A", "B", "C", "D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
